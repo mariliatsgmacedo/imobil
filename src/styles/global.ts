@@ -3,27 +3,6 @@ import {createGlobalStyle} from 'styled-components'
 export const GlobalStyle = createGlobalStyle`
 
 :root{
-
-     /** Dark Mode */
-     --primary-dark-blue-400: #1E1E2D;
-    --secondary-dark-blue-100: #25273E;
-    --primary-text-gray-100: #E4E8F1;
-    --secondary-text-gray-200: #A0A3B1;
-
-    /** Light Mode */
-    --primary-light-gray-200: #f7f9fc;
-    --secondary-light-gray-100: #ffffff;
-    --primary-text-blue-400: #2e3a59;
-    --secondary-text-blue-200: #5a6a8b;
-
-    /** Feedback Colors and actions */
-    --primary-border-lines-blue-300: #3A3B5A;
-    --primary-buttons-actions-blue-200: #007bff;
-    --secondary-buttons-actions-gray-300: #6c757d;
-    --success-green-200: #28a745;
-    --warning-yellow-200: #ffc107;
-    --error-red-200: #dc3545;
-
     /** Fonts and Weigth */
     font-size:  62.5%;
 
@@ -41,6 +20,10 @@ export const GlobalStyle = createGlobalStyle`
     --font-bold-w700: 700;
 
 }
+:focus{
+    outline: 0;
+    box-shadow: 0 0 0 .2rem ${props => props.theme['primary-border-lines-blue-300']};
+}
 
 *{
     margin: 0;
@@ -49,8 +32,8 @@ export const GlobalStyle = createGlobalStyle`
 }
 
 body{
-    background-color: var(--primary-dark-blue-400);
-    color: var(--primary-text-blue-400);
+    background: ${(props) => props.theme['primary-light-gray-200'] || props.theme['primary-dark-blue-400']};
+    color: ${(props) => props.theme['primary-text-blue-400'] || props.theme['primary-text-gray-100']};
 }
 
 body,input, textarea,button{
