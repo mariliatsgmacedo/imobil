@@ -12,6 +12,7 @@ export const GlobalStyle = createGlobalStyle`
     --font-24: 2.4rem;
     --font-20: 2rem;
     --font-16: 1.6rem;
+    --font-14: 1.4rem;
     --font-12: 1.2rem;
 
     --font-regular-w400: 400;
@@ -22,7 +23,6 @@ export const GlobalStyle = createGlobalStyle`
 }
 :focus{
     outline: 0;
-    box-shadow: 0 0 0 .2rem ${props => props.theme['primary-border-lines-blue-300']};
 }
 
 *{
@@ -32,8 +32,8 @@ export const GlobalStyle = createGlobalStyle`
 }
 
 body{
-    background: ${(props) => props.theme['primary-light-gray-200'] || props.theme['primary-dark-blue-400']};
-    color: ${(props) => props.theme['primary-text-blue-400'] || props.theme['primary-text-gray-100']};
+    background: ${(props) => props.theme.colors.primaryBackground};
+    color: ${(props) => props.theme.colors.primaryText};
 }
 
 body,input, textarea,button{
